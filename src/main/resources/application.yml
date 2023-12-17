@@ -1,0 +1,61 @@
+# Application Profile(Environment) and Application Common Properties
+---
+spring:
+  profiles:
+    active:
+    - dev
+db:
+  type: NoSQL
+...
+# Development Environment Properties
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+db:
+  driverClassName: com.mysql.cj.driver.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/msqldb
+  username: root
+  password: welcome1
+...
+# Testing Environment Properties
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+
+db:
+  driverClassName: com.mysql.cj.driver.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/msqldb
+  username: root
+  password: welcome1
+...
+# Staging Environment Properties
+---
+spring:
+  config:
+    activate:
+      on-profile: stage
+
+db:
+  driverClassName: com.mysql.cj.driver.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/msqldb
+  username: root
+  password: welcome1
+...
+# Production Environment Properties
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+db:
+  driverClassName: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@localhost:1521:xe
+  username: sys
+  password: Welcom3@1
+...
